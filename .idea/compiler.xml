@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product-service" />
+        <module name="analysis-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="analysis-service" target="15" />
       <module name="product-service" target="15" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="analysis-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
     </option>
   </component>

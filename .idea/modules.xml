@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/analysis-service/analysis-service.iml" filepath="$PROJECT_DIR$/analysis-service/analysis-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/apache-kafka-stream.iml" filepath="$PROJECT_DIR$/.idea/apache-kafka-stream.iml" />
       <module fileurl="file://$PROJECT_DIR$/product-service/product-service.iml" filepath="$PROJECT_DIR$/product-service/product-service.iml" />
     </modules>
