@@ -18,7 +18,7 @@ public class TestScheduler {
 
   private final ProductProducer productProducer;
 
-  @Scheduled(fixedDelay = 500)
+  @Scheduled(fixedDelay = 2000)
   public void scheduleFixedDelayTask() {
     List<SoldProduct> soldProducts =
         Arrays.asList(
