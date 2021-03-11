@@ -22,7 +22,6 @@ public class ProductStreamProcessor {
     Serde<String> keySerde = Serdes.String();
     Serde<SoldProduct> valueSerde = new JsonSerde<>(SoldProduct.class);
 
-
     builder.stream("sold-product", Consumed.with(keySerde, valueSerde))
         .peek((k, v) -> System.out.println(v))
         .foreach(this::apply);
