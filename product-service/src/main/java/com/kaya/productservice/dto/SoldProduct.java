@@ -8,10 +8,12 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
-@AllArgsConstructor
+// Lombok plugins annotations to create
+// boiler plate codes (getters, setter, hashcode, equal, ...)
 @Data
-@NoArgsConstructor
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class SoldProduct implements Serializable {
 
   @Serial private static final long serialVersionUID = -7680637768557787325L;
