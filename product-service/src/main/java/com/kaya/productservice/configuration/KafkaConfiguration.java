@@ -20,6 +20,7 @@ import java.util.Map;
 @EnableKafka
 public class KafkaConfiguration {
 
+  // Creates a topic with name of 'sold-product'
   @Bean
   NewTopic soldProducts() {
     return TopicBuilder.name("sold-product").partitions(6).replicas(1).build();
@@ -28,10 +29,15 @@ public class KafkaConfiguration {
   @Bean
   public ProducerFactory<String, SoldProduct> soldProductProducerFactory() {
     Map<String, Object> configProps = new HashMap<>();
-    configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-    configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-    configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-    configProps.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false);
+    configProps.put(
+        ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092"); // Destination of kafka brokers
+    configProps.put(
+        ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class); // Serializer for key
+    configProps.put(
+        ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class); // Serializer for value
+    configProps.put(
+        JsonSerializer.ADD_TYPE_INFO_HEADERS,
+        false); // Package name of value won't be added to header with this config
 
     return new DefaultKafkaProducerFactory<>(configProps);
   }
