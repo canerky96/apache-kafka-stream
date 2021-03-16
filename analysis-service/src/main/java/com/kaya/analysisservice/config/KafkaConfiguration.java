@@ -4,6 +4,7 @@ import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.annotation.EnableKafkaStreams;
 import org.springframework.kafka.config.KafkaStreamsConfiguration;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.kafka.support.serializer.JsonSerde;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
+@EnableKafkaStreams
 public class KafkaConfiguration {
 
   @Bean
